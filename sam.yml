@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Lambda Layer to use pyarrow and related libraries.
+
+Resources:
+  CpuTrace:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: AWSLambda-Python3-pyarrow
+      Description: Lambda Layer to use pyarrow and related libraries.
+      ContentUri: workdir
+      CompatibleRuntimes:
+        - python3.6
+      RetentionPolicy: Retain
